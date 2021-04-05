@@ -1,0 +1,54 @@
+<p>account works!</p>
+
+<form #Registerform="ngForm" (ngSubmit)="AccountRegister()">
+  <small [class.text-danger]="msg.status==500">{{msg.message}}</small>
+  <div class="container">
+    <h1>Add Loan</h1>
+    <p>Please fill the details for loan.</p>
+    <hr>
+
+    <div>
+      <label for="email"><b>Account Number</b></label>
+      <input type="email" placeholder="Enter up to 10 digit only " name="email" [(ngModel)]="account.accountnumber"  required
+      #accountnumber="ngModel" [class.is-invalid]="accountnumber.invalid && accountnumber.touched">
+      <small class="text-danger" [class.d-none]="accountnumber.valid || accountnumber.untouched">Account number  is required !!</small>
+    </div>
+
+    <div>
+      <label for="email"><b>Account Pin</b></label>
+      <input type="email" placeholder="Enter up to 5 digit only " name="email" [(ngModel)]="account.pin"  required
+      #pin="ngModel" [class.is-invalid]="pin.invalid && pin.touched">
+      <small class="text-danger" [class.d-none]="pin.valid || pin.untouched">Pin  is required !!</small>
+    </div>
+
+    <div>
+      <label for="username"><b>Name</b></label>
+      <input type="username" placeholder="Enter Full Name" name="username"  [(ngModel)]="account.name" required #name="ngModel"
+      [class.is-invalid]="name.invalid && name.touched">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name  is required !!</small>
+      </div>
+
+      <div>
+        <label for="username"><b>Account Type</b></label>
+        <input type="username" placeholder="Enter savings or current" name="username"  [(ngModel)]="account.accounttype" required #accounttype="ngModel"
+        [class.is-invalid]="accounttype.invalid && accounttype.touched">
+        <small class="text-danger" [class.d-none]="accounttype.valid || accounttype.untouched">Account Type  is required !!</small>
+        </div>
+
+        <div>
+          <label for="username"><b>Balance</b></label>
+          <input type="username" placeholder="Enter savings or current initial Balance" name="username"  [(ngModel)]="account.balance" required #balance="ngModel"
+          [class.is-invalid]="balance.invalid && balance.touched">
+          <small class="text-danger" [class.d-none]="balance.valid || balance.untouched">Account balance  is required !!</small>
+          </div>
+
+
+      <div>
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Submit</button>
+        <small class="float-right btn btn-info"  [routerLink]="['/home']">Home</small>
+      </div>
+      </div>
+
+
+    </form>

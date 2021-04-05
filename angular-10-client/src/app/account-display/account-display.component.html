@@ -1,0 +1,42 @@
+
+
+<div class="text-center">
+  <table class="table table-striped">
+          <thead>
+
+              <th><h5>  <div class="text-center">Account History</div></h5></th>
+          </thead>
+
+           <tbody>
+
+              <tr>
+                <th>Account number</th>
+                <th>pin</th>
+                <th>name</th>
+                <th>Account type</th>
+                <th>Balance</th>
+
+
+
+              </tr>
+
+             <tr *ngFor="let account of account">
+
+             <td>{{account.accountnumber}}</td>
+             <td>{{account.pin}}</td>
+              <td>{{account.name}}</td>
+              <td>{{account.accounttype}}</td>
+              <td>{{account.balance}}</td>
+
+
+
+
+             </tr>
+
+           </tbody>
+
+
+
+  </table>
+  </div>
+

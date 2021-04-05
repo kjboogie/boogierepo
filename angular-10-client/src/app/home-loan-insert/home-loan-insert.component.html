@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="left">
+      <div class="left-logo">
+          <h1> Bank Home Loan</h1>
+          <hr>
+      </div>
+      <div class="left-cont">
+          <div>
+              <h2>Unique Advantages</h2>
+              <hr>
+              <ul>
+                  <li>No prepayment penalties. Reduce your interest burden by prepaying the loan.</li>
+                  <li>Low processing charges. No hidden costs or administrative charges.</li>
+              </ul>
+          </div>
+          <div>
+              <h2>Latest Offers</h2>
+              <hr>
+              <ul>
+                  <li>Upgrade to a new home with  Bridge Home Loan.</li>
+                  <li> launched Home Loans linked to Repo Linked Lending Rate.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="right">
+      <h2>Fill the Form</h2>
+      <mat-vertical-stepper #stepper>
+          <mat-step [stepControl]="firstLoanForm">
+              <form [formGroup]="firstLoanForm" autocomplete="off">
+                  <ng-template matStepLabel>Personal Details</ng-template>
+                  <mat-form-field>
+                      <mat-label>Account Number</mat-label>
+                      <input matInput placeholder="Enter Account Number" formControlName="account_number" required>
+                  </mat-form-field>
+                  <mat-form-field>
+                      <mat-label>Name</mat-label>
+                      <input matInput placeholder="First name, Last Name" formControlName="holder_name" required>
+                  </mat-form-field>
+                  <div>
+                      <button mat-button matStepperNext>Next</button>
+                  </div>
+              </form>
+          </mat-step>
+          <mat-step [stepControl]="secondLoanForm">
+              <form [formGroup]="secondLoanForm" autocomplete="off">
+                  <ng-template matStepLabel>Loan Details</ng-template>
+                  <mat-form-field appearance="fill">
+                      <mat-label>Select Loan Amount</mat-label>
+                      <mat-select formControlName="loan_Amount" (selectionChange)="setPeriodDropdown($event.value)" name="loan_Amount">
+                          <mat-option *ngFor="let amount of loanAmount" [value]="amount.value">
+                              {{amount.name}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                      <mat-label>Select Loan Period</mat-label>
+                      <mat-select formControlName="loan_Period" [attr.disabled]="!periodDisabled" name="loan_Period">
+                          <mat-option *ngFor="let period of loanPeriod" [value]="period.value">
+                              {{period.name}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+                  <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button matStepperNext>Next</button>
+                  </div>
+              </form>
+          </mat-step>
+          <mat-step [stepControl]="thirdLoanForm">
+              <form [formGroup]="thirdLoanForm" autocomplete="off">
+                  <ng-template matStepLabel>Property Details</ng-template>
+                  <mat-form-field class="example-full-width">
+                      <mat-label>Enter Property Address</mat-label>
+                      <textarea matInput placeholder="C-500......" formControlName="property_Address"></textarea>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                      <mat-label>Select Property Type</mat-label>
+                      <mat-select formControlName="property_Type" name="property_Type">
+                          <mat-option *ngFor="let property of propertyType" [value]="property.value">
+                              {{property.name}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+                  <a href="/loan-terms">Terms and Conditions</a>
+                  <div>
+                      <button mat-button (click)="applyLoan()">Submit</button>
+                  </div>
+              </form>
+          </mat-step>
+      </mat-vertical-stepper>
+  </div>
+</div>

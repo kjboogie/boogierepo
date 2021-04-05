@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+h1,
+h2,
+hr {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.left {
+    width: 25%;
+    background-color: #8f4f4f;
+}
+
+.left-logo {
+    top: 10%;
+    position: relative;
+}
+
+.left-logo h1 {
+    font-size: 40px;
+    font-family: 'Bebas Neue';
+    color: #fff;
+}
+
+.left-cont {
+    position: relative;
+    top: 20%;
+    width: 80%;
+    color: #fff;
+    left: 10px;
+    font-family: monospace;
+}
+
+.right {
+    width: 75%;
+    background-color: #78c4d4;
+}
+
+.right h2 {
+    position: relative;
+    top: 22%;
+    left: 20%;
+    font-family: monospace;
+    color: #fff;
+    font-size: 40px;
+    width: fit-content;
+}
+
+hr {
+    width: 54px;
+    float: left;
+    margin: 0;
+    border: none;
+    height: 4px;
+    background-color: #fff;
+}
+
+.left-cont>div {
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+mat-vertical-stepper {
+    position: relative;
+    width: 75%;
+    top: 25%;
+    right: 50px;
+    border-radius: 40px;
+}
+
+.mat-vertical-stepper-header {
+    border-radius: 40px !important;
+}
+
+.mat-button {
+    background-color: indianred;
+    margin: 0 5px;
+}

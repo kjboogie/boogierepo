@@ -1,0 +1,35 @@
+<div class="text-center">
+  <table class="table table-striped">
+          <thead>
+
+              <th><h5>  <div class="text-center">Loan History</div></h5></th>
+          </thead>
+
+           <tbody>
+
+              <tr>
+                <th>vehical</th>
+                <th>veh_num</th>
+                <th>amount</th>
+                <th>valid_till</th>
+
+
+              </tr>
+
+             <tr *ngFor="let loan of loan">
+
+             <td>{{loan.vehical}}</td>
+             <td>{{loan.veh_num}}</td>
+              <td>{{loan.amount}}</td>
+              <td>{{loan.valid_till}}</td>
+
+
+
+             </tr>
+
+           </tbody>
+
+
+
+  </table>
+  </div>

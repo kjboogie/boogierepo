@@ -1,0 +1,41 @@
+<p>wallet-display works!</p>
+
+
+<div class="text-center">
+  <table class="table table-striped">
+          <thead>
+
+              <th><h5>  <div class="text-center">Account History</div></h5></th>
+          </thead>
+
+           <tbody>
+
+              <tr>
+                <th>Wallet Account number</th>
+                <th>Wallet pin</th>
+                <th>name</th>
+                <th>Wallet Balance</th>
+
+
+
+              </tr>
+
+             <tr *ngFor="let waccount of waccount">
+
+             <td>{{waccount.walletaccountnumber}}</td>
+             <td>{{waccount.wpin}}</td>
+              <td>{{waccount.name}}</td>
+              <td>{{waccount.wbalance}}</td>
+
+
+
+
+             </tr>
+
+           </tbody>
+
+
+
+  </table>
+  </div>
+
